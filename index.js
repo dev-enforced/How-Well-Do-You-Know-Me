@@ -1,12 +1,15 @@
+//Adding the required packages
 var readlineSync=require("readline-sync");
 var chalk=require("chalk");
 var log=console.log;
 var emoji=require("node-emoji");
 
+//Starting title
 log(chalk.hex("#1D4ED8")("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"))
 log(chalk.hex("#FCD34D")("~ How Well Do You Know Me? ~"))
 log(chalk.hex("#1D4ED8")("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"))
 
+//Defining variables along with other trivia lists as well as highScorers details
 var userName="";
 var userScore=0;
 var highScorers=[
@@ -43,6 +46,7 @@ var trivia=[
   }
 ]
 
+//Get and check userName.
 function tandcUN(){
   userName=readlineSync.question("Sate your Name:\n");
   if(userName==""){
@@ -57,15 +61,18 @@ tandcUN();
 
 // log(chalk.hex("#FCD34D")("\nHey "+userName+" Let's get started")+emoji.get("grinning")+"\n")
 
+//Printing the rules of the game
 log(chalk.hex("#A5B4FC").bold("Game Info: Here you will get a list of questions which on answering you will get to know more about me.The rules of this game are given below ")+emoji.get("point_down"))
 
 log(chalk.hex("#3B82F6").underline("\nGame Rules:\n"))
 log(chalk.yellowBright("1. This trivia consists of 5 single answer questions.\n2. For each correctly answered question, you will be awarded 2 points.\n3. For each incorrectly answered question,you will be deducted 1 point.\n4. For each question, you have to type the answer in lowercase format and press Enter key for getting the next question.\n"))
 
+//Printing the highScorers and their details
 log(chalk.greenBright.underline("HALL OF FAME:\n"))
 for(i=0;i<highScorers.length;i++){
   log(chalk.hex("#F9A8D4")(highScorers[i].pName+" --> "+highScorers[i].pScore))
 }
+//Starting the game and defining functions for checking answers
 var response=confirm("\n Are you ready?")
 function checkAns(questionAsked,answerGiven){
   var userAns=readlineSync.question(questionAsked);
@@ -82,7 +89,7 @@ function checkAns(questionAsked,answerGiven){
   log("-------------------------")
 }
 
-
+//Conditional program to provide different actions for the response
 if(response===true){
   for(i=0;i<trivia.length;i++){
     var x=i+1;
@@ -95,6 +102,7 @@ if(response===true){
   log(chalk.hex("#064E3B")("Hope you find the time to play the game "+emoji.get(":open_mouth:")))
 }
 
+//Printing the final score after the game is over.
 log("\nTotal points scored by "+userName+": "+userScore);
 var crossed=0;
 for(i=0;i<highScorers.length;i++){
