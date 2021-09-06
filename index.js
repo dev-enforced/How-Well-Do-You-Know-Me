@@ -15,11 +15,11 @@ var userScore=0;
 var highScorers=[
   {
     pName:"Roshan",
-    pScore:10
+    pScore:12
   },
   {
     pName:"Akshat",
-    pScore:7
+    pScore:9
   }
 ]
 
@@ -43,6 +43,10 @@ var trivia=[
   {
     question:"Am I a foodie?(Type Yes/No)\n",
     answer:"Yes"
+  },
+  {
+    question:"Which group game do I play with friends along with Discord?\n",
+    answer:"Among Us"
   }
 ]
 
