@@ -1,4 +1,4 @@
-# "How Well Do You Know Me?" Game
+# How Well Do You Know Me?
 
 This is a trivia game made using Javascript and hosted on ReplIt platform
 
