@@ -52,7 +52,7 @@ var trivia=[
 
 //Get and check userName.
 function tandcUN(){
-  userName=readlineSync.question("Sate your Name:\n");
+  userName=readlineSync.question("State your Name:\n");
   if(userName==""){
     log(chalk.hex("#FCD34D")("Don't give an empty response"+emoji.get("dizzy_face")))
     tandcUN();
